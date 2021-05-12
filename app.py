@@ -240,8 +240,6 @@ def index():
         return features, np.exp(model.predict([features])[0] - 1)
 
     fe = FeaturesExtract()
-
-
     model = joblib.load('lgb.pkl')
 
     errors = ''
