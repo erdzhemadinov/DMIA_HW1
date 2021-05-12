@@ -8,12 +8,14 @@ flask = "*"
 pandas = "*"
 wtforms = "*"
 flask-wtf = "*"
-email-validator = "*"
 lightgbm = "*"
 
 [dev-packages]
 pandas = "*"
 flask = "*"
+wtforms = "*"
+flask-wtf = "*"
+lightgbm = "*"
 
 [requires]
 python_version = "3.8"
