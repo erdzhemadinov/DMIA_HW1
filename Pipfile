@@ -9,6 +9,7 @@ pandas = "*"
 wtforms = "*"
 flask-wtf = "*"
 lightgbm = "*"
+gunicorn = "*"
 
 [dev-packages]
 pandas = "*"
@@ -16,6 +17,7 @@ flask = "*"
 wtforms = "*"
 flask-wtf = "*"
 lightgbm = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
