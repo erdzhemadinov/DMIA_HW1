@@ -200,7 +200,7 @@ class FeaturesExtract:
     #
 
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     def predict(x):
 
