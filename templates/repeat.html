@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+	<h3 class="text-muted">Password checker</h3>
+      </div>
+      <hr/>
+      {% if errors %}
+      <div class="alert alert-danger">
+	{{ errors }}
+      </div>
+      {% endif %}
+      <form class="form-horizontal" action="." method="post">
+	<div class="form-group">
+	  <label for="name" class="col-lg-2 control-label">Password</label>
+	  <div class="col-lg-2">
+	    <input type="text" class="form-control" name="password" placeholder="Password" value="{{ data.password }}">
+	  </div>
+
+
+	</div>
+
+	<div class="form-group">
+	  <div class="col-lg-offset-2 col-lg-2">
+	    <input type="submit" class="btn btn-primary" value="Check">
+	  </div>
+	</div>
+      </form>
+
+        <h3>Report</h3>
+      <table class="table">
+	<tbody>
+	  <tr>
+	    <td>Password</td>
+	    <td>{{ data.password }}</td>
+	  </tr>
+
+     <tr>
+	    <td>Frequency</td>
+	    <td>{{ data.count }}</td>
+	  </tr>
+
+
+      	</tbody>
+      </table>
+
+    <h3>Some calculated features(not all, some features are hidden)</h3>
+      <table class="table">
+	<tbody>
+
+      <tr>
+	    <td>Length string</td>
+	    <td>{{ data.features[0] }}</td>
+	  </tr>
+
+      <tr>
+	    <td>Punctuation count ratio</td>
+	    <td>{{ data.features[5] }}</td>
+	  </tr>
+
+      <tr>
+	    <td>Title letters count ratio</td>
+	    <td>{{ data.features[6] }}</td>
+	  </tr>
+
+      <tr>
+	    <td>Lower letters count ratio</td>
+	    <td>{{ data.features[7] }}</td>
+	  </tr>
+
+          <tr>
+	    <td>Digit count ratio</td>
+	    <td>{{ data.features[8] }}</td>
+	  </tr>
+
+              <tr>
+	    <td>English word frequency</td>
+	    <td>{{ data.features[9] }}</td>
+	  </tr>
+
+    <tr>
+	    <td>English word frequency without digits</td>
+	    <td>{{ data.features[10] }}</td>
+	  </tr>
+
+        <tr>
+	    <td>Is password type birthday(contains only digits)</td>
+	    <td>
+            {% if data.features[11] %}
+        	TRUE
+      {% endif %}
+
+         {% if not data.features[11] %}
+	        FALSE
+      {% endif %}
+
+
+        </td>
+	  </tr>
+
+    <tr>
+	    <td>Is top password</td>
+	    <td>
+
+        {% if data.features[12] %}
+	TRUE
+      {% endif %}
+         {% if not data.features[12] %}
+	FALSE
+      {% endif %}
+
+
+        </td>
+	  </tr>
+
+       	</tbody>
+      </table>
+
+{#        # title letters count#}
+{#        features.append(len([wrd for wrd in x if wrd.istitle()]))#}
+{#        # lower letter count#}
+{#        features.append(len([wrd for wrd in x if wrd.islower()]))#}
+{#        # digit count#}
+{#        features.append(len([wrd for wrd in x if wrd.isdigit()]))#}
+{#        # punkt ratio#}
+{#        features.append(len("".join(_ for _ in x if _ in string.punctuation)) / len(x))#}
+{#        # title ratio#}
+{#        features.append(len([wrd for wrd in x if wrd.istitle()]) / len(x))#}
+{#        # lower ratio#}
+{#        features.append(len([wrd for wrd in x if wrd.islower()]) / len(x))#}
+{#        # digit ratio#}
+{#        features.append(len([wrd for wrd in x if wrd.isdigit()]) / len(x))#}
+{##}
+{#        # english word freq#}
+{#        features.append(fe.get_words_freq(x))#}
+{##
+{#        # words freq without digit (ex admin121 --> admin)#}
+{#        features.append(fe.get_words_freq_without_digits(x))#}
+{##}
+{#        # is birthday#}
+{#        features.append(fe.extract_birthday(x))#}
+{#        # password freq#}
+{#        features.append(fe.get_pass_freq(x))#}
+{#        # top passwords#}
+{#        features.append(fe.is_from_top(x))#}
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+  </body>
+</html>
