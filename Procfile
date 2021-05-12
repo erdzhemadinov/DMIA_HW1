@@ -1,1 +1,1 @@
-web: gunicorn dmia-hw1:app --log-file-
+web gunicorn dmia-hw1:app --log-file-
